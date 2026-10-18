@@ -5,6 +5,7 @@ declare(strict_types=1);
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\ServerRequest;
 use GuzzleHttp\Psr7\Utils;
+use HttpSoft\Emitter\SapiEmitter;
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -24,8 +25,12 @@ $stream = Utils::streamFor($content);
 
 $response = new Response();
 
-$response = $response->withBody($stream);
+$response = $response->withStatus(418)
+    ->withHeader('X-Powered-By', 'PHP')
+    ->withBody($stream);
 
-echo $response->getBody();
+$emitter = new SapiEmitter();
+
+$emitter->emit($response);
 
 

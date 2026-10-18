@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a880d3888627bbf2c854f55dee252cdb",
+    "content-hash": "5d31823cfd8bc4dfeca55c16a1c49b2d",
     "packages": [
         {
             "name": "guzzlehttp/psr7",
@@ -124,6 +124,68 @@
                 }
             ],
             "time": "2026-10-17T23:57:19+00:00"
+        },
+        {
+            "name": "httpsoft/http-emitter",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/httpsoft/http-emitter.git",
+                "reference": "f63429d3c6f7f42611ed0cfaa0c40e8ef6ea041a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/httpsoft/http-emitter/zipball/f63429d3c6f7f42611ed0cfaa0c40e8ef6ea041a",
+                "reference": "f63429d3c6f7f42611ed0cfaa0c40e8ef6ea041a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4|^8.0",
+                "psr/http-message": "^1.1|^2.0"
+            },
+            "provide": {
+                "psr/http-message-implementation": "1.0"
+            },
+            "require-dev": {
+                "httpsoft/http-message": "^1.1",
+                "phpunit/phpunit": "^9.5",
+                "squizlabs/php_codesniffer": "^3.7",
+                "vimeo/psalm": "^4.9|^5.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "HttpSoft\\Emitter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Evgeniy Zyubin",
+                    "email": "mail@devanych.ru",
+                    "homepage": "https://devanych.ru/",
+                    "role": "Founder and lead developer"
+                }
+            ],
+            "description": "Emitting of PSR-7 Response implementation",
+            "homepage": "https://httpsoft.org/",
+            "keywords": [
+                "emitter",
+                "http",
+                "http-emitter",
+                "http-message",
+                "php",
+                "psr-7"
+            ],
+            "support": {
+                "docs": "https://httpsoft.org/docs/emitter",
+                "issues": "https://github.com/httpsoft/http-emitter/issues",
+                "source": "https://github.com/httpsoft/http-emitter"
+            },
+            "time": "2024-12-29T22:09:06+00:00"
         },
         {
             "name": "psr/http-factory",
