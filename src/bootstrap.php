@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use GuzzleHttp\Psr7\Response;
+use App\Controllers\HomeController;
+use App\Controllers\ProductController;
 use GuzzleHttp\Psr7\ServerRequest;
-use GuzzleHttp\Psr7\Utils;
 use HttpSoft\Emitter\SapiEmitter;
 use League\Route\Router;
 
@@ -16,26 +16,9 @@ $request = ServerRequest::fromGlobals();
 
 $router = new Router();
 
-$router->map('GET', '/', function () {
-    $stream = Utils::streamFor("Homepage");
-    $response = new Response();
-    $response = $response->withBody($stream);
-    return $response;
-});
-$router->get('/list', function () {
-    $stream = Utils::streamFor("List of products");
-    $response = new Response();
-    $response = $response->withBody($stream);
-    return $response;
-});
-$router->get('/product/{id:number}', function ($request, array $args) {
-    $id = $args['id'];
-    $stream = Utils::streamFor("Single Product with ID $id");
-    $response = new Response();
-    $response = $response->withBody($stream);
-    return $response;
-});
-
+$router->get('/', [HomeController::class, "index"]);
+$router->get('/list', [ProductController::class, "index"]);
+$router->get('/product/{id:number}', [ProductController::class, "show"]);
 
 
 $path = $request->getUri()->getPath();
