@@ -28,8 +28,9 @@ $router->get('/list', function () {
     $response = $response->withBody($stream);
     return $response;
 });
-$router->get('/product', function () {
-    $stream = Utils::streamFor("Single product");
+$router->get('/product/{id:number}', function ($request, array $args) {
+    $id = $args['id'];
+    $stream = Utils::streamFor("Single Product with ID $id");
     $response = new Response();
     $response = $response->withBody($stream);
     return $response;
