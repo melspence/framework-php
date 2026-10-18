@@ -13,7 +13,14 @@ ini_set('display_errors', '1');
 
 $request = ServerRequest::fromGlobals();
 
-$page = $request->getQueryParams()['page'];
+$path = $request->getUri()->getPath();
+
+$page = match ($path) {
+    '/' => 'home',
+    '/products' => 'list',
+    '/product' => 'show',
+
+};
 
 ob_start();
 
