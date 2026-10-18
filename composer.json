@@ -1,0 +1,17 @@
+{
+    "name": "melspence/framework-php",
+    "description": "Basic PHP framework",
+    "type": "project",
+    "license": "mit",
+    "autoload": {
+        "psr-4": {
+            "Melspence\\FrameworkPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mel Spence"
+        }
+    ],
+    "require": {}
+}
