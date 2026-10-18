@@ -13,5 +13,7 @@
             "name": "Mel Spence"
         }
     ],
-    "require": {}
+    "require": {
+        "guzzlehttp/psr7": "^3.2"
+    }
 }
